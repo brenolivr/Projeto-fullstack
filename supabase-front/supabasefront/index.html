@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product CRUD</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Product CRUD</h1>
+
+<form id="add-product-form">
+  <h2>Add Product</h2>
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="description">Description:</label><br>
+  <input type="text" id="description" name="description" required><br><br>
+
+  <label for="price">Price:</label><br>
+  <input type="number" id="price" name="price" required step="0.01"><br><br>
+
+  <button type="submit">Add</button>
+</form>
+
+<!-- Update form (popup-like simple fields) -->
+<div id="update-section" style="display:none; margin-top:20px;">
+  <h2>Update Product</h2>
+  <input type="hidden" id="update-id">
+  <label for="update-name">Name:</label><br>
+  <input type="text" id="update-name"><br><br>
+
+  <label for="update-description">Description:</label><br>
+  <input type="text" id="update-description"><br><br>
+
+  <label for="update-price">Price:</label><br>
+  <input type="number" id="update-price" step="0.01"><br><br>
+
+  <button id="update-save">Save Update</button>
+  <button id="update-cancel">Cancel</button>
+</div>
+
+<!-- Buscar por ID -->
+<div id="search-section" style="margin-top:20px;">
+  <h3>Buscar produto por ID</h3>
+  <input type="number" id="search-id" placeholder="Digita o id">
+  <button id="search-btn">Pesquisar</button>
+  <button id="clear-search">Mostrar todos</button>
+</div>
+
+<ul id="products"></ul>
+
+  <script src="app.js"></script>
+  <script>
+    // Call fetchProducts() when the page loads
+    window.addEventListener('load', fetchProducts);
+  </script>
+</body>
+</html>
